@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // 获取配置文件
 const create_sql_cfg = require('../libs/parse_config')
 

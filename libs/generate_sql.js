@@ -47,7 +47,7 @@ function createSqlText(name, sqlStr) {
         if (err) {
             console.error('Error writing file:', err)
         } else {
-            console.log('SQL query has been saved to generated_sql.txt')
+            console.log(`${name}.txt 已生成`)
         }
     })
 }
