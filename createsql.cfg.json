@@ -1,0 +1,6 @@
+{
+    "path": "src/components/repay_list_popup/1.0/repay_list_popup.js",
+    "realtimes_sql": true,
+    "days_sql": true,
+    "prefix": "CM_M.CASH_HOME.INDEX"
+}
