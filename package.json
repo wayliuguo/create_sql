@@ -1,5 +1,5 @@
 {
-    "name": "create_sql",
+    "name": "@well_haha/create_sql",
     "version": "1.0.0",
     "description": "",
     "main": "./bin/index.js",
