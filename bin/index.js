@@ -11,4 +11,5 @@ const generate_sql = require('../libs/generate_sql')
 // 上报列表
 const report_list = parse_code.parseCode(create_sql_cfg)
 
+// 生成sql
 generate_sql.generateSql(create_sql_cfg, report_list)
