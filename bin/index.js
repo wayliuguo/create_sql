@@ -2,10 +2,11 @@
 
 // 文档链接：https://github.com/tj/commander.js/blob/master/Readme_zh-CN.md
 const { program } = require('commander')
-const config = require('../libs/utils/config')
+const packageConfig = require('../libs/utils/package.config')
+const { configFileName } = require('../libs/utils/constant')
 
 // 设置版本信息
-program.version(config.cliVersion)
+program.version(packageConfig.cliVersion)
 
 // 定义 init 命令
 program
@@ -19,7 +20,7 @@ program
 // 定义 create 命令
 program
     .command('create')
-    .description('根据createsql.cfg.json 生成sql')
+    .description(`根据${configFileName} 生成sql`)
     .action(() => {
         // 代码解析组件
         const parse_code = require('../libs/parse_code')
