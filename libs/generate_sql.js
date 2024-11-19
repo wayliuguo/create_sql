@@ -1,7 +1,8 @@
 const fs = require('fs')
+const config = require('./utils/config')
 
 // 生成 sql
-function generateSql(config, reportList) {
+function generateSql(reportList) {
     // 合成 hottag
     reportList = reportList.map(item => {
         return {

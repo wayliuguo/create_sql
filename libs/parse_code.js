@@ -1,5 +1,6 @@
 // 文件模块
 const fs = require('fs')
+const config = require('./utils/config')
 
 // js 解析器
 const acorn = require('acorn')
@@ -23,12 +24,12 @@ function getCodeAst(fileContent) {
     })
 }
 
-function parseCode(createSqlCfg = {}) {
+function parseCode() {
     // 存储结果
     const report_list = []
 
     // 获取文件内容
-    const fileContent = getFileContent(createSqlCfg.path)
+    const fileContent = getFileContent(config.path)
     // 获取 AST
     const ast = getCodeAst(fileContent)
 

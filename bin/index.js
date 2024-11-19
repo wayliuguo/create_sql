@@ -1,15 +1,36 @@
 #!/usr/bin/env node
 
-// 获取配置文件
-const create_sql_cfg = require('../libs/parse_config')
+// 文档链接：https://github.com/tj/commander.js/blob/master/Readme_zh-CN.md
+const { program } = require('commander')
+const config = require('../libs/utils/config')
 
-// 代码解析
-const parse_code = require('../libs/parse_code')
-// 生成sql
-const generate_sql = require('../libs/generate_sql')
+// 设置版本信息
+program.version(config.cliVersion)
 
-// 上报列表
-const report_list = parse_code.parseCode(create_sql_cfg)
+// 定义 init 命令
+program
+    .command('init')
+    .description('初始化配置文件')
+    .action(() => {
+        const init_config = require('../libs/init_config')
+        init_config.initConfig()
+    })
 
-// 生成sql
-generate_sql.generateSql(create_sql_cfg, report_list)
+// 定义 create 命令
+program
+    .command('create')
+    .description('根据createsql.cfg.json 生成sql')
+    .action(() => {
+        // 代码解析组件
+        const parse_code = require('../libs/parse_code')
+        // 生成sql组件
+        const generate_sql = require('../libs/generate_sql')
+
+        // 解析代码，获取上报列表
+        const report_list = parse_code.parseCode()
+        // 根据上报列表生成sql
+        generate_sql.generateSql(report_list)
+    })
+
+// 解析命令行参数
+program.parse(process.argv)

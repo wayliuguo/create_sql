@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-"use strict";const e=require("../libs/parse_config"),r=require("../libs/parse_code"),s=require("../libs/generate_sql"),i=r.parseCode(e);s.generateSql(e,i);
+"use strict";const{program:e}=require("commander"),i=require("../libs/utils/config");e.version(i.cliVersion),e.command("init").description("初始化配置文件").action((()=>{require("../libs/init_config").initConfig()})),e.command("create").description("根据createsql.cfg.json 生成sql").action((()=>{const e=require("../libs/parse_code"),i=require("../libs/generate_sql"),r=e.parseCode();i.generateSql(r)})),e.parse(process.argv);

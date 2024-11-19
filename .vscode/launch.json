@@ -13,7 +13,7 @@
             ],
             "program": "${workspaceFolder}\\bin\\index.js",
             "args": [
-                "E:\\working\\cm_m\\src\\components\\repay_list_popup\\1.0\\repay_list_popup.js"
+                ""
             ],
         }
     ]
