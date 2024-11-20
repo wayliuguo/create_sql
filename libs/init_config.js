@@ -1,8 +1,10 @@
 const fs = require('fs')
+const path = require('path')
 const { configFileName } = require('../libs/utils/constant')
 
 function getTemplateConfig() {
-    return fs.readFileSync('createsql.cfg.template.json', 'utf-8')
+    const templatePath = path.join(__dirname, '../', 'createsql.cfg.template.json')
+    return fs.readFileSync(templatePath, 'utf-8')
 }
 function initConfig() {
     const fileName = configFileName
