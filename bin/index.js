@@ -27,10 +27,17 @@ program
         // 生成sql组件
         const generate_sql = require('../libs/generate_sql')
 
+        console.log('开始解析代码...')
         // 解析代码，获取上报列表
         const report_list = parse_code.parseCode()
-        // 根据上报列表生成sql
-        generate_sql.generateSql(report_list)
+
+        if (report_list.length > 0) {
+            console.log('开始生成SQL...')
+            // 根据上报列表生成sql
+            generate_sql.generateSql(report_list)
+        } else {
+            console.log('未找到任何上报点，不生成SQL')
+        }
     })
 
 // 解析命令行参数

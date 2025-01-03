@@ -3,6 +3,8 @@ const config = require('./utils/config')
 
 // 生成 sql
 function generateSql(reportList) {
+    console.log(`开始处理 ${reportList.length} 个上报点...`)
+
     // 合成 hottag
     reportList = reportList.map(item => {
         return {
@@ -13,11 +15,13 @@ function generateSql(reportList) {
 
     if (config.days_sql) {
         // 生成天维度 sql
+        console.log('生成天维度SQL...')
         const sqlQuery = generateDaysSql(reportList)
         createSqlText('days_sql', sqlQuery)
     }
 
     if (config.realtimes_sql) {
+        console.log('生成实时维度SQL...')
         const sqlQuery = generateRealtimesSql(reportList)
         createSqlText('realtimes_sql', sqlQuery)
     }
