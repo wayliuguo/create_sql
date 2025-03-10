@@ -1,6 +1,6 @@
 {
     "name": "@well_haha/create_sql",
-    "version": "1.1.2",
+    "version": "2.0.0",
     "description": "",
     "main": "./dist/create_sql.js",
     "scripts": {
