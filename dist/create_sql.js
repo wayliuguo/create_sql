@@ -1,0 +1,2 @@
+#!/usr/bin/env node
+"use strict";const{program:e}=require("commander"),i=require("../libs/utils/package.config"),{configFileName:r}=require("../libs/utils/constant");e.version(i.cliVersion),e.command("init").description("初始化配置文件").action((()=>{require("../libs/init_config").initConfig()})),e.command("create").description(`根据${r} 生成sql`).action((()=>{const e=require("../libs/parse_code"),i=require("../libs/generate_sql"),r=e.parseCode();i.generateSql(r)})),e.parse(process.argv);

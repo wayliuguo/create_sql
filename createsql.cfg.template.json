@@ -1,0 +1,6 @@
+{
+    "paths": ["./src/components/cash_order_confirm/1.0", "./src/views/cash/pocket_money"],
+    "prefix": "CM_M.CASH_POCKET_MONEY.INDEX",
+    "days_sql": true,
+    "realtimes_sql": true
+}
