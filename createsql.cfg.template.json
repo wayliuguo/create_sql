@@ -2,5 +2,13 @@
     "paths": ["./src/components/cash_order_confirm/1.0", "./src/views/cash/pocket_money"],
     "prefix": "CM_M.CASH_POCKET_MONEY.INDEX",
     "days_sql": true,
-    "realtimes_sql": true
+    "realtimes_sql": true,
+    "errorReportConfig": {
+        "enabled": true,
+        "errorTypeMap": {
+            "mainErrorReport": "MAIN_PROCESS_ERROR",
+            "errorReport": "MAIN_PROCESS_ERROR",
+            "notMainReport": "NOT_MAIN_PROCESS_ERROR"
+        }
+    }
 }
