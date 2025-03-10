@@ -35,7 +35,7 @@ function generateRealtimesSql(reportList) {
         const list = [
             `  COUNT(DISTINCT CASE WHEN (fevent_pos = '${pos.hottag}' AND fdate = (toDate(now())) - INTERVAL 1 DAY) THEN fuid END) AS \`昨日${pos.eventPosName}\`,`,
             `  COUNT(DISTINCT CASE WHEN (fevent_pos = '${pos.hottag}' AND fdate = (toDate(now()))) THEN fuid END) AS \`今日${pos.eventPosName}\`,`,
-            `  COUNT(DISTINCT CASE WHEN (fevent_pos = '${pos.hottag}' AND fdate = (toDate(now())) - INTERVAL 1 DAY) THEN fuid END) AS \`近7日${pos.eventPosName}\`,`
+            `  COUNT(DISTINCT CASE WHEN (fevent_pos = '${pos.hottag}' AND fdate between (toDate(now()) - INTERVAL 8 DAY) AND (toDate(now()) - INTERVAL 1 DAY)) THEN fuid END)  AS \`近7日${pos.eventPosName}\`,`
         ]
         sqlParts.push(...list)
     })
